@@ -1,5 +1,7 @@
 import { food } from './food.js';
 
+const foodList = document.getElementById('food-list');
+
 function renderFoods(item) {
     const foodCard = document.createElement('li');
     foodCard.classList.add('food-item');
@@ -13,4 +15,9 @@ function renderFoods(item) {
 
     foodCard.append(img, span);
     return foodCard;
+}
+
+for (let item of food) {
+    const foodCard = renderFoods(item);
+    foodList.append(foodCard);
 }
